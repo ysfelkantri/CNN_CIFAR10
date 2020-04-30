@@ -2,16 +2,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 import cv2
 from keras.models import load_model
-import pickle
+#import pickle
 
 #############################################
 
-threshold = 0.75         # PROBABLITY THRESHOLD
 font = cv2.FONT_HERSHEY_SIMPLEX
+
 ##############################################
 
-# IMPORT THE TRANNIED MODEL
-#pickle_in=open("last_model_trained_.h5","rb")  ## rb = READ BYTE
+# IMPORT THE TRANNIED MODEL 
+#pickle_in=open("last_model_trained_.p","rb")  ## rb = READ BYTE
 #model=pickle.load(pickle_in)
 model = load_model('last_model_trained_.h5')
 
@@ -30,7 +30,7 @@ def getClassName(classNo) :
 
     # PROCESS IMAGE
 
-imgOrignal = cv2.imread('car2.jpeg')  # reads image 'opencv-logo.png' as grayscale
+imgOrignal = cv2.imread('car2.jpeg')  # reads image 'car2'
 plt.imshow(imgOrignal)
 img =cv2.imshow('hadik',imgOrignal)
 img = np.asarray(imgOrignal)
